@@ -1,2 +1,5 @@
 /.idea/
 /target/
+/src/frontend/node_modules/
+/src/main/resources/static/
+/src/frontend/dist/
