@@ -18,6 +18,8 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ./src/frontend
 
       - name: Build for production
         run: npm run build
+        working-directory: ./src/frontend
