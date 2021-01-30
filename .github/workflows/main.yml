@@ -20,10 +20,17 @@ jobs:
         with:
           java-version: 15
           architecture: x64
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/*.jar staging
-      - uses: actions/upload-artifact@v2
+          
+      - name: Cache the Maven packages to speed up build
+        uses: actions/cache@v1
         with:
-          name: Package
-          path: staging  
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: mvn_jar_artifact
+          path: target/*.jar
