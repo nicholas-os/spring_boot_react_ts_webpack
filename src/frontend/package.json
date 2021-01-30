@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack && NODE_ENV=production webpack --config webpack.config.js",
+    "build-debug": "NODE_ENV=debug webpack --config webpack.config.js",
     "watch": "webpack -w",
     "lint": "eslint ./src --max-warnings 0 --ext .js,.jsx,.ts,.tsx"
   },
