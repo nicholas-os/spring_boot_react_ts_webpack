@@ -2,9 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
+const production = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: './src/index.jsx',
-  mode: 'development',
+  mode: production ? 'production' : 'development',
   module: {
     rules: [
       {
@@ -34,6 +36,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../main/resources/static/'),
     publicPath: '/',
-    filename: 'js/[name].[contenthash].js',
+    filename: production ? 'js/[name].[contenthash].js' : 'js/[name].js',
   },
 };

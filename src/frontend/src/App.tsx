@@ -2,11 +2,13 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  <div className="App">
-    <span role="img" aria-label="sheep">🙌</span>
-    Hello
-    <span role="img" aria-label="sheep">🙌</span>
-  </div>;
+  return (
+    <div className="App">
+      <span role="img" aria-label="hand">🙌</span>
+      Hello
+      <span role="img" aria-label="hand">🙌</span>
+    </div>
+  );
 }
 
 export default App;
