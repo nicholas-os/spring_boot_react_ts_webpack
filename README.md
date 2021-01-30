@@ -1,7 +1,16 @@
-# A sample project with Spring Boot, reactJS, TypeScript and webpack
+#A minimal spring boot, reactjs, typescript, eslint and webpack project
 
 
-### Guides
+### Spring Boot
+
+### reactjs with typescript
+
+### eslint
+
+### webpack
+
+
+## Guides
 The following guides illustrate how to use some features concretely:
 * [Enable hot reload in intelliJ](https://www.jetbrains.com/help/idea/spring-boot.html#application-update-policies)
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
